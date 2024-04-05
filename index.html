@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Counter App</title>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+h1{
+    text-align: center;
+}
+.container {
+    text-align: center;
+    margin-top: 10%;
+    margin-left: 30%;
+
+}
+
+.counter {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 50%;
+    height: 50%;
+}
+
+#count {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.buttons button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+}
+
+.buttons button:hover {
+    background-color: #0056b3;
+}
+
+</style>
+</head>
+<body>
+    <h1>Counter App</h1>
+<div class="container">
+    <div class="counter">
+        <span id="count">0</span>
+        <div class="buttons">
+            <button onclick="increment()">Increment</button>
+            <button onclick="decrement()">Decrement</button>
+            <button onclick="reset()">Reset</button>
+        </div>
+    </div>
+</div>
+<script>
+    let count = 0;
+const countElement = document.getElementById('count');
+
+function updateCount() {
+    countElement.textContent = count;
+}
+
+function increment() {
+    count++;
+    updateCount();
+}
+
+function decrement() {
+    count--;
+    updateCount();
+}
+
+function reset() {
+    count = 0;
+    updateCount();
+}
+
+updateCount(); // Initial count display
+
+</script>
+</body>
+</html>
